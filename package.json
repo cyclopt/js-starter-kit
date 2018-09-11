@@ -4,7 +4,7 @@
   "description": "My JS starter kit",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel -c security-check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel -c security-check open:src lint:watch test:watch start-mockupapi",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "npm audit",
     "lint": "esw webpack.config.* src buildScripts",
@@ -12,7 +12,10 @@
     "localtunnel": "lt --port 3001",
     "share": "npm-run-all --parallel open:src localtunnel",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockData",
+    "prestart-mockupapi": "npm run generate-mock-data",
+    "start-mockupapi": "json-server --watch src/api/db.json --port 3002 "
   },
   "author": "Kyriakos Chatzidimitriou",
   "license": "MIT",
@@ -39,7 +42,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "jsdom": "^12.0.0",
-    "json-schema-faker": "^0.4.7",
+    "json-schema-faker": "^0.5.0-rc15",
     "json-server": "^0.14.0",
     "localtunnel": "^1.9.0",
     "mocha": "^5.2.0",
