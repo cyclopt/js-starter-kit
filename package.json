@@ -4,10 +4,11 @@
   "description": "My JS starter kit",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel -c security-check open:src lint:watch test:watch start-mockupapi",
-    "open:src": "babel-node buildScripts/srcServer.js",
+    "old-start": "npm-run-all --parallel -c security-check open:src lint:watch test:watch start-mockupapi",
+    "start": "npm-run-all --parallel -c open:src lint:watch test:watch front-watch-build",
+    "open:src": "nodemon --exec babel-node -- back-end/server.js",
     "security-check": "npm audit",
-    "lint": "esw webpack.config.* src buildScripts",
+    "lint": "esw webpack.config.* src buildScripts back-end",
     "lint:watch": "npm run lint -- --watch",
     "localtunnel": "lt --port 3001",
     "share": "npm-run-all --parallel open:src localtunnel",
@@ -15,7 +16,8 @@
     "test:watch": "npm run test -- --watch",
     "generate-mock-data": "babel-node buildScripts/generateMockData",
     "prestart-mockupapi": "npm run generate-mock-data",
-    "start-mockupapi": "json-server --watch src/api/db.json --port 3002 "
+    "start-mockupapi": "json-server --watch db.json --port 3002",
+    "front-watch-build": "npm run watch --prefix ./front-end"
   },
   "author": "Kyriakos Chatzidimitriou",
   "license": "MIT",
@@ -47,6 +49,7 @@
     "localtunnel": "^1.9.0",
     "mocha": "^5.2.0",
     "nock": "^9.6.1",
+    "nodemon": "^1.18.4",
     "npm-run-all": "^4.1.3",
     "numeral": "^2.0.6",
     "rimraf": "^2.6.2",

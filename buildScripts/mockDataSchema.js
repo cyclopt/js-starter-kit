@@ -9,24 +9,16 @@ export const schema = {
         "type": "object",
         "properties": {
           "id": {
-            "type": "number",
+            "type": "integer",
             "unique": true,
             "minimum": 1
           },
-          "firstName": {
+          "username": {
             "type": "string",
-            "faker": "name.firstName"
+            "faker": "internet.userName"
           },
-          "lastName": {
-            "type": "string",
-            "faker": "name.lastName"
-          },
-          "email": {
-            "type": "string",
-            "faker": "internet.email"
-          }
         },
-        "required": ["id", "firstName", "lastName", "email"]
+        "required": ["id", "username"]
       }
     }
   },
