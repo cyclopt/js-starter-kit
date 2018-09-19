@@ -2,7 +2,7 @@ import React from 'react';
 import TextInput from '../common/TextInput';
 import PropTypes from 'prop-types';
 
-const UserForm = ({user, onSave, onChange, loading, errors}) => {
+const UserForm = ({user, onSave, onChange, saving, errors}) => {
   return(
     <form>
       <h1>Manage User</h1>
@@ -15,8 +15,8 @@ const UserForm = ({user, onSave, onChange, loading, errors}) => {
       />
       <input
         type="submit"
-        disabled={loading}
-        value={loading ? 'Saving' : 'Save'}
+        disabled={saving}
+        value={saving ? 'Saving...' : 'Save'}
         className="btn btn-primary"
         onClick={onSave}
       />
@@ -28,7 +28,7 @@ UserForm.propTypes = {
   user: PropTypes.object.isRequired,
   onSave: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  loading: PropTypes.bool,
+  saving: PropTypes.bool,
   errors: PropTypes.object
 }
 

@@ -1,4 +1,4 @@
-// const chalk = require('chalk');
 import chalk from 'chalk';
+import logger from '../back-end/logger';
 
-console.log(chalk.green('I am starting the dev server...')); //eslint-disable-line no-console
+logger.info(chalk.green(`I am starting the ${process.env.NODE_ENV} server...`));

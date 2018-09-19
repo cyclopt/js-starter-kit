@@ -11,9 +11,10 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
+    "react-spinkit": "^3.0.0",
     "redux": "^4.0.0",
-    "redux-immutable-state-invariant": "^2.1.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "toastr": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,6 +24,12 @@
     "watch": "nodemon --exec 'react-scripts build' --watch src --watch public"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "nock": "^10.0.0",
+    "nodemon": "^1.18.4",
+    "react-test-renderer": "^16.5.2",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-mock-store": "^1.5.3"
   }
 }

@@ -4,15 +4,17 @@ import * as userActions from '../../actions/userActions'
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import UserForm from './UserForm';
+import toastr from 'toastr';
 
-class ManageUserPage extends React.Component {
+export class ManageUserPage extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
       user: Object.assign({}, props.user),
-      errors: {}
+      errors: {},
+      saving: false
     }
 
     this.updateUserState = this.updateUserState.bind(this);
@@ -33,9 +35,34 @@ class ManageUserPage extends React.Component {
     return this.setState({user: user});
   }
 
+  userFormIsValid() {
+    let formIsValid = true;
+    let errors = {};
+    if(this.state.user.username.length < 5) {
+      errors.username = 'Title must be at least 5 characters';
+      formIsValid = false;
+    }
+    this.setState({errors: errors});
+    return formIsValid;
+  }
+
   saveUser(event) {
     event.preventDefault();
-    this.props.actions.saveUser(this.state.user);
+    if(!this.userFormIsValid()) {
+      return;
+    }
+    this.setState({saving: true});
+    this.props.actions.saveUser(this.state.user)
+      .then(() => this.redirect())
+      .catch((error) => {
+        toastr.error(error);
+        this.setState({saving: false});
+      });
+  }
+
+  redirect() {
+    this.setState({saving: false});
+    toastr.success('User saved');
     this.context.router.history.push('/users')
   }
 
@@ -46,6 +73,7 @@ class ManageUserPage extends React.Component {
         errors={this.state.errors}
         onChange={this.updateUserState}
         onSave={this.saveUser}
+        saving={this.state.saving}
       />
     );
   }

@@ -1,33 +1,62 @@
 {
-  "name": "js-starter-kit",
+  "name": "cyclopt-js-starter-kit",
   "version": "1.0.0",
-  "description": "My JS starter kit",
+  "description": "Cyclopt's JS starter kit",
   "scripts": {
-    "prestart": "babel-node buildScripts/startMessage.js",
-    "old-start": "npm-run-all --parallel -c security-check open:src lint:watch test:watch start-mockupapi",
-    "start": "npm-run-all --parallel -c open:src lint:watch test:watch front-watch-build",
-    "open:src": "nodemon --exec babel-node -- back-end/server.js",
-    "security-check": "npm audit",
-    "lint": "esw webpack.config.* src buildScripts back-end",
-    "lint:watch": "npm run lint -- --watch",
-    "localtunnel": "lt --port 3001",
-    "share": "npm-run-all --parallel open:src localtunnel",
-    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch",
     "generate-mock-data": "babel-node buildScripts/generateMockData",
-    "prestart-mockupapi": "npm run generate-mock-data",
-    "start-mockupapi": "json-server --watch db.json --port 3002",
-    "front-watch-build": "npm run watch --prefix ./front-end"
+    "prestart:back-end": "npm run generate-mock-data",
+    "start:back-end": "nodemon --exec babel-node -- back-end/server.js",
+    "start:front-end": "npm start --prefix ./front-end",
+    "security-check": "npm audit",
+    "lint": "esw buildScripts back-end",
+    "lint:watch": "npm run lint -- --watch",
+    "test:back-end": "jest --coverage --outputFile=coverage.json",
+    "test:front-end": "npm test --prefix ./front-end -- --coverage",
+    "test:back-end:watch": "npm run test:back-end -- --watch",
+    "test:front-end:watch": "npm test --prefix ./front-end",
+    "test": "npm-run-all --parallel -c test:back-end test:front-end",
+    "predev": "babel-node buildScripts/startMessage.js",
+    "dev": "npm-run-all --parallel -c security-check lint:watch test:back-end:watch start:back-end",
+    "dev:front-end": "npm-run-all --parallel -c start:front-end test:front-end:watch",
+    "build:frontend:watch": "npm run watch --prefix ./front-end",
+    "prebuild": "",
+    "build": "npm run build --prefix ./front-end",
+    "postbuild": "",
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel -c start-server lint:watch test:watch front-watch-build"
   },
   "author": "Kyriakos Chatzidimitriou",
   "license": "MIT",
   "dependencies": {
-    "whatwg-fetch": "^2.0.4"
+    "bunyan": "^1.8.12"
+  },
+  "jest": {
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "<rootDir>/front-end/",
+      "<rootDir>/node_modules/"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/front-end/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/coverage/"
+    ],
+    "coverageReporters": [
+      "json-summary",
+      "json",
+      "text-summary",
+      "lcov"
+    ]
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
@@ -43,6 +72,7 @@
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "jsdom": "^12.0.0",
     "json-schema-faker": "^0.5.0-rc15",
     "json-server": "^0.14.0",
@@ -54,6 +84,8 @@
     "numeral": "^2.0.6",
     "rimraf": "^2.6.2",
     "style-loader": "^0.23.0",
+    "superagent": "^4.0.0-beta.5",
+    "supertest": "^3.3.0",
     "webpack": "^4.17.1",
     "webpack-dev-middleware": "^3.2.0",
     "webpack-hot-middleware": "^2.22.3",
