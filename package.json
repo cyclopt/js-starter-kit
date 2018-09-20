@@ -21,7 +21,7 @@
     "clean": "rm -rf build && mkdir build && mkdir -p build/front-end",
     "build-babel": "babel -d ./build/back-end ./back-end -s && babel -d ./build/scripts ./scripts -s",
     "build:front-end:watch": "npm run watch --prefix ./front-end",
-    "build": "npm run clean && npm run build --prefix ./front-end && cp -r ./front-end/build ./build/front-end/build && npm run build-babel",
+    "build": "rm -rf build && mkdir build && mkdir -p build/front-end && npm run build --prefix ./front-end && cp -r ./front-end/build ./build/front-end/build && npm run build-babel",
     "prestart": "npm run build",
     "start": "NODE_ENV=production node ./build/back-end/server.js",
     "start:prod": "NODE_ENV=production npm run start:back-end",
