@@ -36,7 +36,7 @@ describe('Async Actions', () => {
 
   test('should create BEGIN_AJAX_CALL and LOAD_USER_SUCCESS when loading  users', done => {
     // https://github.com/nock/nock/issues/699 needs the CORS
-    nock('http://localhost:4000')
+    nock('http://localhost:3000')
       .get('/users').reply(200, {body: {users:[{id:1, username: 'A'}, {id: 2, username: 'B'}]}}, {'Access-Control-Allow-Origin': '*'});
     const expectedActions = [
       {type: types.BEGIN_AJAX_CALL},

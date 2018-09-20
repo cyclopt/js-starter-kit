@@ -39,7 +39,7 @@ export class ManageUserPage extends React.Component {
     let formIsValid = true;
     let errors = {};
     if(this.state.user.username.length < 5) {
-      errors.username = 'Title must be at least 5 characters';
+      errors.username = 'Username must be at least 5 characters';
       formIsValid = false;
     }
     this.setState({errors: errors});

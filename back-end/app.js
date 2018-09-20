@@ -1,7 +1,8 @@
 import jsonServer from 'json-server';
 import path from 'path';
 const server = jsonServer.create()
-const router = jsonServer.router('db.json')
+const db = process.env.NODE_ENV === 'production' ? 'db-prod.json' : 'db.json';
+const router = jsonServer.router(db);
 let middlewares = jsonServer.defaults()
 if(process.env.NODE_ENV === 'production') {
   middlewares = jsonServer.defaults({static: path.join(__dirname, '../front-end/build')})
