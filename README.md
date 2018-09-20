@@ -1,5 +1,7 @@
 # js-starter-kit
 
+[Running version of the app in Heroku]()
+
 This project is a JavaScript web application starter kit. The goal of the project is to have a starting point and have decisions made for you in order to battle jsfatigue.
 
 The kit uses React-Redux in the front-end and json-server as a back-end. For task automation it uses npm-scripts. The front-end was scaffolded using [create-react-app](https://github.com/facebook/create-react-app).
@@ -16,7 +18,7 @@ Some of the main dependencies of the kit and their utiliy are found in the follo
 |  |  |
 |  |  |
 
-Continuous Integration/Continuous Deployment (CI/CD) is made through travis-ci on heroku. A running version of the app can be found [here](heroku).
+Continuous Integration/Continuous Deployment (CI/CD) is made through [travis-ci](https://travis-ci.org) on [Heroku](https://heroku.com). A running version of the app can be found [here](heroku). Also a build is triggered in [appveyor](https://www.appveyor.com). In the feature we will also add support for [circle-ci](http://circleci.com).
 
 Ideas for this kit are taken from:
 
