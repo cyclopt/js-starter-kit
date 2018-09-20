@@ -1,1 +1,20 @@
-{"users":[{"id":34890344,"username":"do consequat"},{"id":20569416,"username":"dolore nulla consequat qui"},{"id":55609873,"username":"exercitation velit Duis"}]}
+{
+  "users": [
+    {
+      "id": 36959244,
+      "username": "cillum adipisicing sed dolor"
+    },
+    {
+      "id": 79598751,
+      "username": "labore exercitation in incididunt aliquip"
+    },
+    {
+      "id": 90471088,
+      "username": "magna mollit qui ad"
+    },
+    {
+      "username": "adasdadasdadadas",
+      "id": 90471089
+    }
+  ]
+}
