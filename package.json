@@ -25,8 +25,8 @@
     "prestart": "npm run build",
     "start": "NODE_ENV=production node ./build/back-end/server.js",
     "start:prod": "NODE_ENV=production npm run start:back-end",
-    "postinstall": "npm install --prefix ./front-end",
-    "heroku-postinstall": "npm run build"
+    "postinstall": "npm install --prefix ./front-end && npm run build",
+    "heroku-postinstall": "ls"
   },
   "author": "Kyriakos Chatzidimitriou",
   "license": "MIT",
