@@ -1,11 +1,13 @@
 # Test against a node environment
 environment:
   matrix:
-    - nodejs_version: "10"
+    - nodejs_version: "8"
 
 # Install scripts
 install:
   - ps: Install-Product node $env:nodejs_version
+  - npm -g install npm@2
+  - set PATH=%APPDATA%\npm;%PATH%
   - npm install
 
 # Post-install test scripts
