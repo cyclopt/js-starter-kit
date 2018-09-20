@@ -26,8 +26,49 @@ Ideas for this kit are taken from:
 
 ## Local installation and running
 
+Clone the repository:
 
+    git clone https://github.com/cyclopt/js-starter-kit
 
-### Development version
+Install the dependencies (both for the back-end and the front-end):
+
+    npm install
+    npm install --prefix ./front-end
+
+### Development
+
+Open two terminals. To start the back-end server run:
+
+    npm run start:dev:back-end
+
+This will:
+  - generate new mock data
+  - display a start message
+  - do a security check with npm audit
+  - lint the files in watch mode
+  - run the tests in watch mode
+  - run the server
+
+Navigate to http://localhost:4000 to see that it is running.
+
+Then start the front-end in the other terminal:
+
+    npm run start:dev:front-end
+
+Navigate to http://localhost:3000 to see that it is running.
+
+In both cases we are wathcing the tests so one can do out of the box Test-Driven Development (TDD).
+
+### Testing
+
+To just test both the front-end and the back-end run:
+
+    npm test
 
 ### Production version
+
+To start locally the producion version of the app, run:
+
+    npm start
+
+It will build the front-end and start the back-end serving also the built front-end.
