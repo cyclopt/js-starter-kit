@@ -1,5 +1,9 @@
 # js-starter-kit
 
+[![Build Status](https://travis-ci.org/cyclopt/js-starter-kit.svg?branch=master)](https://travis-ci.org/cyclopt/js-starter-kit)
+
+[![Build status](https://ci.appveyor.com/api/projects/status/cxxf8d19pr9qotd0?svg=true)](https://ci.appveyor.com/project/kyrcha/js-starter-kit)
+
 [Running version of the app in Heroku]()
 
 This project is a JavaScript web application starter kit. The goal of the project is to have a starting point and have decisions made for you in order to battle jsfatigue.
@@ -35,6 +39,9 @@ Clone the repository:
 Install the dependencies (both for the back-end and the front-end):
 
     npm install
+
+The command `npm install` will also run after this:
+
     npm install --prefix ./front-end
 
 ### Development

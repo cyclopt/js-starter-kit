@@ -21,7 +21,8 @@
     "build:front-end:watch": "npm run watch --prefix ./front-end",
     "build": "npm run build --prefix ./front-end",
     "prestart": "npm run build",
-    "start": "NODE_ENV=production npm run start:back-end"
+    "start": "NODE_ENV=production npm run start:back-end",
+    "postinstall": "npm install --prefix ./front-end"
   },
   "author": "Kyriakos Chatzidimitriou",
   "license": "MIT",
