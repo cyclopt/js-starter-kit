@@ -1,12 +1,13 @@
 # Test against a node environment
 environment:
   matrix:
-    - nodejs_version: "6"
+    - nodejs_version: "10"
 
 # Install scripts
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install
+  - npm install --prefix ./front-end
 
 # Post-install test scripts
 test_script:
