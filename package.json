@@ -17,7 +17,7 @@
     "test:front-end:watch": "npm test --prefix ./front-end",
     "start:front-end": "npm start --prefix ./front-end",
     "start:dev:front-end": "npm-run-all --parallel -c test:front-end:watch start:front-end",
-    "test": "npm-run-all --parallel -c test:back-end test:front-end",
+    "test": "npm-run-all --parallel -c generate-mock-data test:back-end test:front-end",
     "clean": "rm -rf build && mkdir build && mkdir -p build/front-end",
     "build-babel": "babel -d ./build/back-end ./back-end -s && babel -d ./build/scripts ./scripts -s",
     "build:front-end:watch": "npm run watch --prefix ./front-end",

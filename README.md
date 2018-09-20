@@ -20,10 +20,10 @@ Some of the main dependencies of the kit and their utiliy are found in the follo
 | Dependency | Description |
 | --- | --- |
 | bunyan | Logger (we don't use console.log :)) |
+| babel-cli | Babel Command line interface |
 
 | DevDependency | Description |
 | --- | --- |
-| babel-cli | Babel Command line interface |
 | babel-core | Babel Core for transpiling the new JavaScript to old |
 | babel-loader | Adds Babel support to Webpack |
 | babel-preset-env | |
