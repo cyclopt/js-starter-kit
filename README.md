@@ -1,10 +1,8 @@
 # js-starter-kit
 
-[![Build Status](https://travis-ci.org/cyclopt/js-starter-kit.svg?branch=master)](https://travis-ci.org/cyclopt/js-starter-kit)
+[![Build Status](https://travis-ci.org/cyclopt/js-starter-kit.svg?branch=master)](https://travis-ci.org/cyclopt/js-starter-kit) [![Build status](https://ci.appveyor.com/api/projects/status/cxxf8d19pr9qotd0?svg=true)](https://ci.appveyor.com/project/kyrcha/js-starter-kit)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/cxxf8d19pr9qotd0?svg=true)](https://ci.appveyor.com/project/kyrcha/js-starter-kit)
-
-[Running version of the app in Heroku]()
+[Running version of the app in Heroku](https://cyclopt-js-starter-kit.herokuapp.com/)
 
 This project is a JavaScript web application starter kit. The goal of the project is to have a starting point and have decisions made for you in order to battle jsfatigue.
 

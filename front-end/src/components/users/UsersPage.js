@@ -19,11 +19,16 @@ class UsersPage extends React.Component {
   render() {
     const {users} = this.props;
     return (
-      <div>
-        <h1>Users Page</h1>
-        <Link to="/user">Add</Link>
+      <section class="section">
+      <div class="container">
+        <h1 class="title">Users Page</h1>
+        <h2 class="subtitle">
+          Manage users
+        </h2>
+        <Link className="button" to="/user">Add</Link>
         <UserList users={users} />
       </div>
+    </section>
     );
   }
 }

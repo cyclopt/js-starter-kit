@@ -14,10 +14,10 @@ function setup(saving) {
 
 
 describe('UserForm via', () => {
-  it('renders form and h1', () => {
+  it('renders form and username label', () => {
     const wrapper = setup(false);
     expect(wrapper.find('form').length).toBe(1);
-    expect(wrapper.find('h1').text()).toEqual('Manage User');
+    expect(wrapper.find('p').text()).toEqual('Add or Update a user');
   });
   it('save button is labeled "Save" when not saving', () => {
     const wrapper = setup(false);

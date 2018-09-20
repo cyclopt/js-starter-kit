@@ -2,25 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TextInput = ({name, label, onChange, placeholder, value, error}) => {
-  let wrapperClass = 'formGroup';
+  let wrapperClass = 'input';
   if(error && error.length > 0) {
-    wrapperClass += " has-error";
+    wrapperClass += " is-danger";
   }
 
   return (
-    <div className={wrapperClass}>
-      <label htmlFor={name}>{label}</label>
-      <div className="field">
-        <input
-          type="text"
-          name={name}
-          className="form-control"
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-        />
-        {error && <div className="alert alert-danger">{error}</div>}
-      </div>
+    <div className="field">
+      <label className="label" htmlFor={name}>{label}</label>
+      <input
+        type="text"
+        name={name}
+        className={wrapperClass}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      />
+      {error && <p className="help is-danger">{error}</p>}
     </div>
   );
 

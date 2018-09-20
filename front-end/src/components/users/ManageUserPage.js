@@ -68,13 +68,22 @@ export class ManageUserPage extends React.Component {
 
   render() {
     return (
-      <UserForm
-        user={this.state.user}
-        errors={this.state.errors}
-        onChange={this.updateUserState}
-        onSave={this.saveUser}
-        saving={this.state.saving}
-      />
+      <section className="section">
+      <div className="container">
+        <h1 className="title">Manage User</h1>
+        <div className="columns">
+          <div className="column is-one-third">
+            <UserForm
+              user={this.state.user}
+              errors={this.state.errors}
+              onChange={this.updateUserState}
+              onSave={this.saveUser}
+              saving={this.state.saving}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
     );
   }
 }

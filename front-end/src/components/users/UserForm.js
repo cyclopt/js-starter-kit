@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const UserForm = ({user, onSave, onChange, saving, errors}) => {
   return(
     <form>
-      <h1>Manage User</h1>
+      <p>Add or Update a user</p>
       <TextInput
         name="username"
         label="Username"
@@ -13,13 +13,17 @@ const UserForm = ({user, onSave, onChange, saving, errors}) => {
         onChange={onChange}
         error={errors.username}
       />
-      <input
-        type="submit"
-        disabled={saving}
-        value={saving ? 'Saving...' : 'Save'}
-        className="btn btn-primary"
-        onClick={onSave}
-      />
+      <div className="field">
+        <div className="control">
+          <input
+            type="submit"
+            disabled={saving}
+            value={saving ? 'Saving...' : 'Save'}
+            className="button is-info"
+            onClick={onSave}
+          />
+        </div>
+      </div>
     </form>
   )
 }

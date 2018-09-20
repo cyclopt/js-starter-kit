@@ -4,11 +4,15 @@ import {Link} from 'react-router-dom';
 class HomePage extends React.Component {
   render() {
     return (
-      <div className="jumbrotton">
-        <h1>Demo Administration</h1>
-        <p>React, redux and react-router demo</p>
-        <Link to='about' className='btn btn-primary btn-lg'>Learn More</Link>
-      </div>
+      <section className="hero">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">User Admin Demo</h1>
+            <h2 className="subtitle">React, redux and react-router demo</h2>
+            <Link to='about' className='btn btn-primary btn-lg'>Learn More</Link>
+          </div>
+        </div>
+      </section>
     );
   }
 }

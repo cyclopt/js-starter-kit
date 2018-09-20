@@ -15,10 +15,12 @@ export class App extends Component {
         <Router>
           <div className="App">
             <Header loading={this.props.loading}/>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/users" component={UsersPage} />
-            <Route path="/user/:id?" component={ManageUserPage} />
-            <Route path="/about" component={AboutPage} />
+              <div className="section">
+                <Route exact path="/" component={HomePage} />
+                <Route path="/users" component={UsersPage} />
+                <Route path="/user/:id?" component={ManageUserPage} />
+                <Route path="/about" component={AboutPage} />
+              </div>
           </div>
         </Router>
     );
