@@ -2,7 +2,7 @@
 import app from './app';
 import logger from './logger';
 
-const port = 4000;
+const port = 3000;
 
 app.listen(process.env.PORT || port, err => {
   if(err) {
