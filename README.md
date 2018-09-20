@@ -15,18 +15,68 @@ The basic fodler structure is:
 
 Some of the main dependencies of the kit and their utiliy are found in the following table:
 
+**Back-end**
+
 | Dependency | Description |
 | --- | --- |
-|  |  |
-|  |  |
+| bunyan | Logger (we don't use console.log :)) |
+
+| DevDependency | Description |
+| --- | --- |
+| babel-cli | Babel Command line interface |
+| babel-core | Babel Core for transpiling the new JavaScript to old |
+| babel-loader | Adds Babel support to Webpack |
+| babel-preset-env | |
+| babel-preset-latest | Babel preset for running all the latest standardized JavaScript features |
+| babel-register | Register Babel to transpile our tests |
+| chalk | Colored command line output |
+| compression | gzip http output |
+| debug | |
+| eslint | Lints JavaScript |
+| eslint-plugin-import | Advanced linting of ES6 imports |
+| eslint-watch | Add watch functionality to ESLint |
+| express | Serves development and production builds |
+| extract-text-webpack-plugin | |
+| jest | Testing framework |
+| json-schema-faker | Declare a JSON schema for generating fake data |
+| json-server | Serve a JSON API locally |
+| nock | Mock HTTP requests via Node |
+| nodemon | Monitor changes | 
+| npm-run-all | Display results of multiple commands on single command line |
+| rimraf | Delete files | 
+| superagent | AJAX client |
+| supertest | Test AJAX requests |
+
+**Front-end**
+
+| Dependency | Description |
+| --- | --- |
+| axios | For AJAX requests  |
+| bulma | Our CSS Framework of choice |
+| prop-types | React prop-types |
+| react | React library |
+| react-dom | React library for DOM rendering |
+| react-redux | Redux library for connecting React components to Redux |
+| react-router-dom | React library for routing in the browser |
+| react-scripts | Scripts for react related tasks (come with CRA) |
+| react-spinkit | Loaders |
+| redux | Library for unidirectional data flows |
+| redux-thunk | Async redux library |
+| toastr | Display messages to the user |
+
+| DevDependency | Description |
+| --- | --- |
+| enzyme | Simplified JavaScript Testing utilities for React (by AirBnB) |
+| enzyme-adapter-react-16 | Needed by react 16 for enzyme to work |
+| nock | Mock HTTP requests for testing |
+| nodemon | Monitors file changes and restarts app (used for watching and building) |
+| react-test-renderer | Needed by react 16 for enzyme to work |
+| redux-immutable-state-invariant | Warn when Redux state is mutated (useful in dev mode) |
+| redux-mock-store | Mock Redux store for testing |
+
+## CI/CD
 
 Continuous Integration/Continuous Deployment (CI/CD) is made through [travis-ci](https://travis-ci.org) on [Heroku](https://heroku.com). A running version of the app can be found [here](heroku). Also a build is triggered in [appveyor](https://www.appveyor.com). In the feature we will also add support for [circle-ci](http://circleci.com).
-
-Ideas for this kit are taken from:
-
-- Cory House courses:
-  - https://github.com/coryhouse/pluralsight-redux-starter
-  - https://github.com/coryhouse/javascript-development-environment
 
 ## Local installation and running
 
@@ -76,6 +126,16 @@ To just test both the front-end and the back-end run:
 
 To start locally the producion version of the app, run:
 
-    npm start
+    npm start:prod
 
 It will build the front-end and start the back-end serving also the built front-end.
+
+The command `npm start` builds also the back-end with `babel`.
+
+## References
+
+Ideas for this kit are taken from:
+
+- Cory House courses:
+  - https://github.com/coryhouse/pluralsight-redux-starter
+  - https://github.com/coryhouse/javascript-development-environment
