@@ -1,6 +1,6 @@
 {
   "name": "cyclopt-js-starter-kit",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Cyclopt's JS starter kit",
   "scripts": {
     "start-message": "babel-node scripts/startMessage.js | ./node_modules/.bin/bunyan",
@@ -26,6 +26,7 @@
     "start": "NODE_ENV=production node ./build/back-end/server.js",
     "start:prod": "NODE_ENV=production npm run start:back-end",
     "postinstall": "npm install --prefix ./front-end && npm run build",
+    "heroku-preinstall": "ls",
     "heroku-postinstall": "ls"
   },
   "author": "Kyriakos Chatzidimitriou",
